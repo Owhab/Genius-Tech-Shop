@@ -15,8 +15,8 @@
             <div class="relative">
               <button class="inline-flex items-center">
                 {{ link.title }}
+                {% render 'chevron-down' %}
               </button>
-
             </div>
           {% else %}
             <a href="{{link.url}}" class="text-base">{{ link.title }}</a>
