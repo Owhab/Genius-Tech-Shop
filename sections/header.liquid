@@ -13,13 +13,13 @@
         {% for link in section.settings.menu.links %}
           {% if link.links != blank %}
             <div class="relative">
-              <button class="inline-flex items-center">
+              <button class="inline-flex items-center text-base text-gray-500 hover:text-gray-900">
                 {{ link.title }}
                 {% render 'chevron-down' %}
               </button>
             </div>
           {% else %}
-            <a href="{{link.url}}" class="text-base text-gray-500 hover:text-gray-700">{{ link.title }}</a>
+            <a href="{{link.url}}" class="text-base text-gray-500 hover:text-gray-900">{{ link.title }}</a>
           {% endif %}
         {% endfor %}
       </div>
@@ -27,9 +27,22 @@
       {% comment %} Cart Button and Account Links (Login or Rgistration) {% endcomment %}
 
       <div class="hidden md:flex items-center justify-end md:flex-1 space-x-5">
-        <a href="/cart" class="whitespace-nowrap text-base text-gray-500 hover:text-gray-700">
+        <a href="/cart" class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
           {% render 'cart' %}
         </a>
+
+        {% comment %} Customer Accounts - Login and Registration Section {% endcomment %}
+        {% if shop.customer_accounts_enabled %}
+
+          {% if customer %}
+            <a href="/account" class="text-base text-gray-500 hover:text-gray-900">Account</a>
+            {{ 'Log Out' | customer_logout_link | replace: '<a', '<a class = "text-base text-gray-500 hover:text-gray-900"' }}
+          {% else %}
+            {{ 'Login' | customer_login_link | replace: '<a', '<a class = "text-base text-gray-500 hover:text-gray-900"' }}
+            {{ 'Register' | customer_register_link | replace: '<a', '<a class = "text-base text-gray-500 hover:text-gray-900"' }}
+          {% endif %}
+
+        {% endif %}
       </div>
 
     </div>
