@@ -12,7 +12,9 @@
     {{ 'tailwind.css' | asset_url | stylesheet_tag }}
     {{ 'application.js' | asset_url | script_tag }}
   </head>
-  <body class = "bg-gray-700 px-10 py-3">
+  <body class="bg-gray-700 px-10 py-3">
+    {% section 'header' %}
+    {% section 'custom-section' %}
     <main role="main">
       {{ content_for_layout }}
     </main>
