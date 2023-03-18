@@ -9,7 +9,7 @@
       </div>
       {% comment %} Navigation Menu {% endcomment %}
 
-      <div class="hidden md:flex space-x-10" x-data="{open: false}">
+      <nav class="hidden md:flex space-x-10" x-data="{open: false}">
         {% for link in section.settings.menu.links %}
           {% if link.links != blank %}
             <div class="relative">
@@ -47,7 +47,7 @@
             <a href="{{link.url}}" class="text-base text-gray-500 hover:text-gray-900">{{ link.title }}</a>
           {% endif %}
         {% endfor %}
-      </div>
+      </nav>
 
       {% comment %} Cart Button and Account Links (Login or Rgistration) {% endcomment %}
 
