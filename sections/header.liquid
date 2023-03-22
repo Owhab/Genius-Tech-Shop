@@ -7,6 +7,17 @@
           {{ shop.name }}
         </h1>
       </div>
+      {% comment %} Hamburger for Mobile {% endcomment %}
+
+      <div class="-mr-2 -my-2 ml-3 md:hidden">
+        <button class="bg-white p-2 inline-flex items-center justify-center focus:outline-none">
+          {% render 'hamburger' %}
+        </button>
+      </div>
+
+      {% comment %} Hamburger for Mobile End {% endcomment %}
+
+
       {% comment %} Navigation Menu {% endcomment %}
 
       <nav class="hidden md:flex space-x-10" x-data="{open: false}">
