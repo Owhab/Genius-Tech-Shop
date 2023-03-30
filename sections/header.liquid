@@ -17,14 +17,14 @@
           {% render 'hamburger' %}
         </button>
       </div>
+      {% comment %} Hamburder Menu {% endcomment %}
 
       {% comment %} Hamburger for Mobile End {% endcomment %}
 
 
       {% comment %} Navigation Menu {% endcomment %}
 
-      <nav class="hidden md:flex space-x-10" x-data="{open: false}">
-        {% for link in section.settings.menu.links %}
+        <nav class="hidden md:flex space-x-10" x-data="{open: false}"> {% for link in section.settings.menu.links %}
           {% if link.links != blank %}
             {% assign link_handle = link.handle | replace: '-', '_' %}
               <div class="relative" x-data='{ {{link_handle}}:false }'>
