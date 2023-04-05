@@ -117,7 +117,7 @@
                       {% comment %} Render Dropdown Child Items {% endcomment %}
                       <div x-show={{ mobile_link_handle }} class="grid gap-y-3 py-3">
                         {% for childlinks in link.links %}
-                          <a href="{{childlinks.link}}" class="-m-3 p-3 mt-2 flex items-center rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-50">
+                          <a href="{{childlinks.url}}" class="-m-3 p-3 mt-2 flex items-center rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-50">
                             <span class="ml-3">{{ childlinks.title }}</span>
                           </a>
                         {% endfor %}
