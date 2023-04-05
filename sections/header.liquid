@@ -1,6 +1,6 @@
 <div class="relative bg-white" x-data="{mobileMenuOpen: false}">
   <div class="mx-auto px-4 sm:px-6">
-    <div class="flex justify-center items-center py-6 md:justify-start md:space-x-10">
+    <div class="flex justify-between items-center py-6 md:justify-start md:space-x-10">
       {% comment %} Store Name and Logo {% endcomment %}
       <div class="flex justify-start lg:flex-1 truncate">
         <h1 class="text-xl font-bold truncate">
@@ -104,6 +104,16 @@
               </div>
             </div>
             {% comment %} Navigation Links for Mobile Drawer Menu {% endcomment %}
+            <div class="pt-3">
+              <div class="grid gap-y-7">
+                {% for link in section.settings.menu.links %}
+                  {% if link.links != blank %}
+                    {% else %}
+                      <a href="{{link.url}}">{{ link.title }}</a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
           </div>
         </div>
       </div>
