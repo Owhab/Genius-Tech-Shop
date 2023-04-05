@@ -12,7 +12,7 @@
       <div class="-mr-2 -my-2 ml-3 md:hidden">
         <button
           class="bg-white p-2 inline-flex items-center justify-center focus:outline-none"
-          x-on:click="mobileMenuOpen: true"
+          x-on:click="mobileMenuOpen = true"
           type="button">
           {% render 'hamburger' %}
         </button>
@@ -86,6 +86,19 @@
       </div>
 
       {% comment %} Mobile Menu Container {% endcomment %}
+      <div x-show="mobileMenuOpen" class="absolute z-10 top-0 inset-x-0 p-2 transform origin-top-left md:hidden">
+        <div class="shadow-lg rounded-lg ring-1 ring-black ring-opacity-5 bg-white w-full">
+          <div class="p-5 divide-y-2 divide-gray-50">
+            {% comment %} Mobile Menu Header Title Logo and Close Button {% endcomment %}
+            <div class="flex items-center justify-between pb-3">
+              <div>
+                <h1 class="text-lg text-gray-500">{{ section.settings.mobile_menu_title }}</h1>
+              </div>
+            </div>
+            {% comment %} Navigation Links for Mobile Drawer Menu {% endcomment %}
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -97,6 +110,11 @@
     "name": "Header",
     "settings": [
       {
+        "type": "text",
+        "id": "mobile_menu_title",
+        "label": "Mobile Menu Title",
+        "default": "Menu"
+      }, {
         "type": "link_list",
         "id": "menu",
         "default": "main-menu",
