@@ -1,11 +1,9 @@
 {
     "name": "404 Template",
-    "layout": "custom_theme",
-    "wrapper": "div#custom-404-template.custom-404-template",
     "sections": {
-        "template-404":{
-            "type": "example-404"
+        "template":{
+            "type": "template-404"
         }
     },
-    "order": ["template-404"]
+    "order": ["template"]
 }
