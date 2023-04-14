@@ -5,30 +5,54 @@
 <p class="text-lg text-white text-center mt-7">{{ section.settings.subtext }}</p>
 
 
-<a href="{{section.settings.button-link}}">
-  <button class="text-center block m-auto text-white bg-green-800 px-5 py-3 mt-5 text-xl rounded-lg">{{ section.settings.button-text }}</button>
-</a>
+{% if section.settings.button-text != blank %}
+  <a class="inline-block mt-5" href="{{ section.settings.button-link }}">
+    <button class="text-center block m-auto text-white bg-green-800 px-5 py-3 mt-5 text-xl rounded-lg">{{ section.settings.button-text }}</button>
+  </a>
+{% endif %}
+
+
+{% if section.settings.secondary-button-text != blank %}
+  <a class="inline-block mt-5" href="{{ section.settings.secondary-button-link }}">
+    <button class="text-center block m-auto text-white bg-blue-500 px-5 py-3 text-xl rounded-lg">{{ section.settings.secondary-button-text }}</button>
+  </a>
+{% endif %}
+
+
 
 {% schema %}
   {
     "name": "Template 404",
+    "tag": "section",
+    "class": "flex items-center justify-center h-screen flex-col",
     "settings": [
       {
         "type": "text",
         "id": "heading",
         "label": "404 Template Heading"
-      }, {
+      },
+      {
         "type": "text",
         "id": "subtext",
         "label": "404 Template Sub Text"
-      }, {
+      },
+      {
         "type": "url",
         "id": "button-link",
         "label": "Button Link"
-      }, {
+      },
+      {
         "type": "text",
         "id": "button-text",
         "label": "Button Text"
+      }, {
+        "type": "url",
+        "id": "secondary-button-link",
+        "label": "Secondary Button Link"
+      }, {
+        "type": "text",
+        "id": "secondary-button-text",
+        "label": "Secondary Button Text"
       }
 
     ]
