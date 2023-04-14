@@ -5,6 +5,10 @@
 <p class="text-lg text-white text-center mt-7">{{ section.settings.subtext }}</p>
 
 
+<a href="{{section.settings.button-link}}">
+  <button class="text-center block m-auto text-white bg-green-800 px-5 py-3 mt-5 text-xl rounded-lg">{{ section.settings.button-text }}</button>
+</a>
+
 {% schema %}
   {
     "name": "Template 404",
@@ -17,6 +21,14 @@
         "type": "text",
         "id": "subtext",
         "label": "404 Template Sub Text"
+      }, {
+        "type": "url",
+        "id": "button-link",
+        "label": "Button Link"
+      }, {
+        "type": "text",
+        "id": "button-text",
+        "label": "Button Text"
       }
 
     ]
