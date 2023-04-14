@@ -1,5 +1,24 @@
 <h1 class="text-3xl text-white text-center mt-4">
-  {{ 'general.404.title' | t }}
+  {{ section.settings.heading }}
 </h1>
 
-<p class="text-lg text-white text-center mt-7">{{ 'general.404.subtext_html' | t }}</p>
+<p class="text-lg text-white text-center mt-7">{{ section.settings.subtext }}</p>
+
+
+{% schema %}
+  {
+    "name": "Template 404",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "404 Template Heading"
+      }, {
+        "type": "text",
+        "id": "subtext",
+        "label": "404 Template Sub Text"
+      }
+
+    ]
+  }
+{% endschema %}
