@@ -1,9 +1,18 @@
 {
-    "name": "404 Template",
-    "sections": {
-        "template":{
-            "type": "template-404"
-        }
-    },
-    "order": ["template"]
+  "sections": {
+    "template": {
+      "type": "template-404",
+      "settings": {
+        "heading": "The page you are searching is not found...",
+        "subtext": "Sorry for the inconvenience",
+        "button-link": "",
+        "button-text": "Home",
+        "secondary-button-link": "shopify:\/\/collections\/all",
+        "secondary-button-text": "Products"
+      }
+    }
+  },
+  "order": [
+    "template"
+  ]
 }
