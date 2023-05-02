@@ -5,7 +5,7 @@
       "settings": {
         "heading": "The page you are searching is not found...",
         "subtext": "Sorry for the inconvenience",
-        "button-link": "",
+        "button-link": "shopify:\/\/collections\/frontpage",
         "button-text": "Home",
         "secondary-button-link": "shopify:\/\/collections\/all",
         "secondary-button-text": "Products"
